@@ -2,20 +2,68 @@
 import { useState } from 'react';
 import './Quiz.scss';
 import QuizStart from '@/components/module/QuizStart/QuizStart';
-import QuizLoader from '../module/QuizLoader/QuizLoader';
+import QuizLoader from '@/components/module/QuizLoader/QuizLoader';
+import QuizGame from '@/components/module/QuizGame/QuizGame';
 import ChatForm from '@/components/module/ChatForm/ChatForm';
 import Input from '@/components/block/Input/Input';
 import Image from 'next/image';
 import sendIcon from '@/assets/img/send.svg';
+import DropDown from '@/components/block/DropDown/DropDown';
 
 export default function Quiz({data}) {
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(4);
+    const [messages, setMessages] = useState([
+        {
+            identifier: 1,
+            show: true,
+            content: "Para continuar..."
+        },
+        {
+            identifier: 1,
+            show: true,
+            delay: 1000,
+            content: "Indícanos tu número de documento"
+        },
+        {
+            identifier: 2,
+            show: false,
+            content: "¡Perfecto!"
+        },
+        {
+            identifier: 2,
+            show: false,
+            delay: 1000,
+            content: "Déjanos tu correo para recibir más tips de bienestar."
+        },
+        {
+            identifier: 3,
+            show: false,
+            content: "¡Listo!"
+        },
+        {
+            identifier: 3,
+            show: false,
+            delay: 1000,
+            content: "¿Quieres unirte a nuestras comunidades de bienestar en whatsapp?"
+        }
+    ])
+
     const handleStart = () => {
         setStep(1);
     }
     const handleLoadQuiz = () => {
         setStep(2);
     }
+    
+    const handleQuizLoader = ()=> {
+        setStep(3);
+    }
+
+    const handleFinishedQuiz = (data) => {
+        console.log(data)
+        setStep(4);
+    }
+
     return (
         <div className="quiz">
             {step === 0 && <QuizStart handle={handleStart}/>}
@@ -23,11 +71,11 @@ export default function Quiz({data}) {
             {step === 1 && 
             <ChatForm title="Estamos cargando tu experiencia" messages={[
                 {
-                    delay: 0,
+                    identifier: 2,
                     content: "¡Nos alegra verte por aquí!"
                 },
                 {
-                    delay: 1000,
+                    identifier: 3,
                     content: "Para iniciar, indícanos tu nombre"
                 }
             ]}>
@@ -38,7 +86,27 @@ export default function Quiz({data}) {
             </ChatForm>}
 
             {step === 2 && 
-            <QuizLoader handle={()=> setStep(3)}/>}
+            <QuizLoader handle={handleQuizLoader}/>}
+
+            {step === 3 && 
+                <QuizGame data={data} handle={handleFinishedQuiz}/>}
+
+            {step === 4 && 
+                <ChatForm title="Tus resultados se están cargando." messages={messages}>
+                    <DropDown 
+                        options={[
+                            {name: 'DNI', value: 'dni'},
+                            {name: 'RUC', value: 'ruc'},
+                        ]}
+                        name="documentType"
+                        updateValue={()=>{}}
+                        defaultValue="dni"
+                    />
+                    <Input type="text" inputMode='numeric' placeholder="N° de documento"/>
+                    <button className='button--icon button button--primary' disabled={false} onClick={handleLoadQuiz}>
+                        <Image className='icon' src={sendIcon} alt="Send icon" />
+                    </button>
+                </ChatForm>}
         </div>
     )
 }

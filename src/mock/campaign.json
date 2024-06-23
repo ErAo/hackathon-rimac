@@ -7,17 +7,8 @@
         "experience": {
             "categories": [
                 {
-                    "id": "1",
-                    "value": "category_1",
-                    "title": "Designed",
-                    "image": "https://www.example.com/image1.jpg",
-                    "description": "This is the first category",
-                    "recomendation": "This is the first category recomendation",
-                    "meta_data": []
-                },
-                {
                     "id": "2",
-                    "value": "category_2",
+                    "value": "negativo",
                     "title": "Designed",
                     "image": "https://www.example.com/image1.jpg",
                     "description": "This is the first category",
@@ -26,7 +17,7 @@
                 },
                 {
                     "id": "3",
-                    "value": "category_3",
+                    "value": "positivo",
                     "title": "Designed",
                     "image": "https://www.example.com/image1.jpg",
                     "description": "This is the first category",
@@ -35,7 +26,7 @@
                 },
                 {
                     "id": "4",
-                    "value": "category_4",
+                    "value": "neutro",
                     "title": "Designed",
                     "image": "https://www.example.com/image1.jpg",
                     "description": "This is the first category",
@@ -45,97 +36,78 @@
             ],
             "components" : [
                 {
-                    "component": "Poll",
-                    "title": "Select your favorite activities",
-                    "subtitle": "Select all that apply",
+                    "type": "Swipe",
+                    "title": "¿Dedicas minutos a meditar al iniciar tu día?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
                     "options": [
                         {
-                            "id": "1",
-                            "image": "https://www.example.com/image1.jpg",
-                            "category": "category_2",
-                            "value": {
-                                "key": "activity",
-                                "value": "mountain bike"
-                            }
-                        },
-                        {
                             "id": "2",
-                            "image": "https://www.example.com/image1.jpg",
-                            "category": "category_1",
-                            "value": {
-                                "key": "activity",
-                                "value": "sleep"
-                            }
-                        },
-                        {
-                            "id": "3",
-                            "image": "https://www.example.com/image1.jpg",
-                            "category": "category_3",
-                            "value": {
-                                "key": "activity",
-                                "value": "swim"
-                            }
-                        },
-                        {
-                            "id": "4",
-                            "image": "https://www.example.com/image1.jpg",
-                            "category": "category_4",
-                            "value": {
-                                "key": "activity",
-                                "value": "gym"
-                            }
+                            "image": "/swipe-1.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "morning_meditation",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "morning_meditation",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "component": "Swipe",
-                    "options": [{
-                            "id": "2",
-                            "image": "https://www.example.com/image1.jpg",
-                            "title": "Option 1",
-                            "subtitle": "This is the first option",
-                            "value": [
-                                {
-                                    "choice": "left",
-                                    "category": "category_1",
-                                    "value": {
-                                        "key": "pet",
-                                        "value": "cat"
-                                    }
-                                },
-                                {
-                                    "choice": "right",
-                                    "category": "category_2",
-                                    "value": {
-                                        "key": "pet",
-                                        "value": "dog"
-                                    }
-                                }
-                            ]
+                    "type": "Poll",
+                    "title": "¿Qué tipo de ejercicio sueles disfrutar más?",
+                    "subtitle": "Haz click en la opción con la que más te identificas",
+                    "options": [
+                        {
+                            "id": "1",
+                            "image": "/yoga_pilates.png",
+                            "category": "negativo",
+                            "title": "Yoga o pilates",
+                            "value": {
+                                "key": "tipo_ejercicio_preferido",
+                                "value": "yoga"
+                            }
                         },
                         {
                             "id": "2",
-                            "image": "https://www.example.com/image1.jpg",
-                            "title": "Option 2",
-                            "subtitle": "This is the first option",
-                            "value": [
-                                {
-                                    "choice": "left",
-                                    "category": "category_3",
-                                    "value": {
-                                        "key": "smoke",
-                                        "value": "si"
-                                    }
-                                },
-                                {
-                                    "choice": "right",
-                                    "category": "category_4",
-                                    "value": {
-                                        "key": "smoke",
-                                        "value": "no"
-                                    }
-                                }
-                            ]
+                            "image": "/running.png",
+                            "category": "positivo",
+                            "title": "Running o ciclismo",
+                            "value": {
+                                "key": "tipo_ejercicio_preferido",
+                                "value": "running"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "image": "/gimnasio.png",
+                            "category": "positivo",
+                            "title": "Gimnasio",
+                            "value": {
+                                "key": "tipo_ejercicio_preferido",
+                                "value": "gimnasio"
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "image": "/natacion.png",
+                            "category": "negativo",
+                            "title": "Natación",
+                            "value": {
+                                "key": "tipo_ejercicio_preferido",
+                                "value": "natación"
+                            }
                         }
                     ]
                 }

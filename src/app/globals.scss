@@ -1,5 +1,9 @@
 /* reset css */
 
+:root {
+  --color-primary: #F7052D
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +16,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  overflow: hidden auto;
 }
 
 html, body {
@@ -66,7 +71,7 @@ button {
   }
 
   &--primary {
-    background: #F7052D;
+    background: var(--color-primary);
     color: #FFF;
 
     &:disabled {
@@ -79,6 +84,6 @@ button {
   }
 
   &--bordered {
-    border: 1px solid #F7052D;
+    border: 1px solid var(--color-primary);
   }
 }

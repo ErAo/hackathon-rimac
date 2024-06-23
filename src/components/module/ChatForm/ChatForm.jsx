@@ -14,7 +14,7 @@ export default function ChatForm({
             <div className="chat_form__wrapper">
                 <div className="chat_form__header">
                     <div className="chat_form__header__content">
-                        <Image src={chatFormImage} alt="Geometric figures"  className="chat_form__header__image" />
+                        <Image src={chatFormImage} alt="Geometric figures" className="chat_form__header__image" />
                         <div className="chat_form__header__title">{title}</div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ export default function ChatForm({
                     <BottomSheet>
                         <div className="chat_form__chat__messages">
                             {messages.map((message, index) => (
-                                <Bubble key={index}>
+                                <Bubble key={index} show={message.show}>
                                     {message.content}
                                 </Bubble>
                             ))}

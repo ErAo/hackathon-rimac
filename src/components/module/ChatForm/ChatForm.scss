@@ -1,5 +1,5 @@
 .chat_form {
-    background: #F7052D;
+    background: var(--color-primary);
     height: 100%;
 
     &__wrapper {
@@ -29,11 +29,14 @@
         &__messages {
             display: flex;
             flex-direction: column;
-            gap: 16px;
             overflow-y: auto;
             position: relative;
             padding: 0 20px 20px;
             z-index: 1;
+
+            .bubble--active ~ .bubble--active {
+                margin-top: 16px;
+            }
         }
 
         &__form {
