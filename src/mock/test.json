@@ -1,0 +1,133 @@
+{
+    "title": "Chat experience campaign",
+    "description": "This campaign is designed to provide a chat experience to the user.",
+    "type": "chat",
+    "experience": {
+        "categories": [
+            {
+                "id": "2",
+                "value": "",
+                "title": "Designed",
+                "image": "https://www.example.com/image1.jpg",
+                "description": "This is the first category",
+                "recomendation": "This is the first category recomendation",
+                "meta_data": []
+            },
+            {
+                "id": "3",
+                "value": "activo",
+                "title": "Designed",
+                "image": "https://www.example.com/image1.jpg",
+                "description": "This is the first category",
+                "recomendation": "This is the first category recomendation",
+                "meta_data": []
+            },
+            {
+                "id": "4",
+                "value": "equilibrado",
+                "title": "Designed",
+                "image": "https://www.example.com/image1.jpg",
+                "description": "This is the first category",
+                "recomendation": "This is the first category recomendation",
+                "meta_data": []
+            }
+        ],
+        "components" : [
+            {
+                "component": "Poll",
+                "title": "Select your favorite activities",
+                "subtitle": "Select all that apply",
+                "options": [
+                    {
+                        "id": "1",
+                        "image": "https://www.example.com/image1.jpg",
+                        "category": "relajado",
+                        "value": {
+                            "key": "activity",
+                            "value": "mountain bike"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "image": "https://www.example.com/image1.jpg",
+                        "category": "activo",
+                        "value": {
+                            "key": "activity",
+                            "value": "sleep"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "image": "https://www.example.com/image1.jpg",
+                        "category": "activo",
+                        "value": {
+                            "key": "activity",
+                            "value": "swim"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "image": "https://www.example.com/image1.jpg",
+                        "category": "relajado",
+                        "value": {
+                            "key": "activity",
+                            "value": "gym"
+                        }
+                    }
+                ]
+            },
+            {
+                "component": "Swipe",
+                "options": [{
+                        "id": "2",
+                        "image": "https://www.example.com/image1.jpg",
+                        "title": "Option 1",
+                        "subtitle": "This is the first option",
+                        "value": [
+                            {
+                                "choice": "left",
+                                "category": "relajado",
+                                "value": {
+                                    "key": "pet",
+                                    "value": "cat"
+                                }
+                            },
+                            {
+                                "choice": "right",
+                                "category": "activo",
+                                "value": {
+                                    "key": "pet",
+                                    "value": "dog"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2",
+                        "image": "https://www.example.com/image1.jpg",
+                        "title": "Option 2",
+                        "subtitle": "This is the first option",
+                        "value": [
+                            {
+                                "choice": "left",
+                                "category": "activo",
+                                "value": {
+                                    "key": "smoke",
+                                    "value": "si"
+                                }
+                            },
+                            {
+                                "choice": "right",
+                                "category": "relajado",
+                                "value": {
+                                    "key": "smoke",
+                                    "value": "no"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

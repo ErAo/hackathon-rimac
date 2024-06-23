@@ -1,0 +1,60 @@
+{
+    "user_data": {
+      "phone": "admin",
+      "email": "email@email.com",
+      "dni": "12345678"
+    },
+    "test_result": {
+        "test_id": "1",
+        "category": {
+            "value": "category_1",
+            "title": "This is the first"
+        }
+    },
+    "meta_data": [
+      {
+        "question": "What is your parent age?",
+        "key": "age_range",
+        "tag": "swim",
+        "value": "40-80",
+        "timestamp": "23232323223",
+        "clicks": 1
+      },
+      {
+        "question": "What is your age?",
+        "key": "pet",
+        "value": "dog",
+        "timestamp": "23232323223",
+        "clicks": 1
+      },
+      {
+        "question": "What is your age?",
+        "key": "smoke",
+        "value": "yes",
+        "timestamp": "23232323223",
+        "clicks": 1
+      },
+      {
+        "question": "What is your age?",
+        "key": "vehicle",
+        "value": "bike",
+        "timestamp": "23232323223",
+        "clicks": 1
+      },
+      {
+        "question": "What is your age?",
+        "key": "travel",
+        "value": "mountain",
+        "timestamp": "23232323223",
+        "clicks": 1
+      },
+      {
+        "question": "What is your age?",
+        "key": "activity",
+        "value": "mountain bike",
+        "timestamp": "23232323223",
+        "clicks": 1
+      }
+    ]
+  }
+  
