@@ -1,6 +1,6 @@
 import './QuizStart.scss'
 import Image from 'next/image'
-import figureSvg from '@/assets/img/image.svg'
+import figureSvg from '@/assets/img/Image.svg'
 import logoSvg from '@/assets/img/Logo.svg'
 import InputCheck from '@/components/block/InputCheck/InputCheck'
 

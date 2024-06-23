@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react'
-import './input.scss'
+import './Input.scss'
 
 export default function Input({
     label, 
