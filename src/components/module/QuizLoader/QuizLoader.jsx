@@ -1,6 +1,6 @@
 import './QuizLoader.scss'
 import Image from 'next/image'
-import figureSvg from '@/assets/img/image.svg'
+import figureSvg from '@/assets/img/chat-form.svg'
 import logoSvg from '@/assets/img/Logo.svg'
 import { useEffect } from 'react';
 

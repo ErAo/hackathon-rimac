@@ -11,8 +11,9 @@ import sendIcon from '@/assets/img/send.svg';
 import DropDown from '@/components/block/DropDown/DropDown';
 
 export default function Quiz({data}) {
-    const [step, setStep] = useState(4);
+    const [step, setStep] = useState(0);
     const [chatStep, setChatStep] = useState(1);
+    const [chatTitle, setChatTitle] = useState('Tus resultados se están cargando.')
     const [messages, setMessages] = useState([
         {
             identifier: 1,
@@ -107,7 +108,7 @@ export default function Quiz({data}) {
                 <QuizGame data={data} handle={handleFinishedQuiz}/>}
 
             {step === 4 && 
-                <ChatForm title="Tus resultados se están cargando." messages={messages}>
+                <ChatForm title={chatTitle} messages={messages}>
                     {chatStep === 1 && 
                     <>
                         <DropDown 
@@ -123,7 +124,10 @@ export default function Quiz({data}) {
                         <button 
                             className='button--icon button button--primary' 
                             disabled={false} 
-                            onClick={()=> handleChatStep(2)}>
+                            onClick={()=> {
+                                handleChatStep(2)
+                                setChatTitle('Falta poco, estamos preparando tu resultado.')
+                            }}>
                             <Image className='icon' src={sendIcon} alt="Send icon" />
                         </button>
                     </>}
@@ -133,7 +137,10 @@ export default function Quiz({data}) {
                         <button 
                             className='button--icon button button--primary' 
                             disabled={false} 
-                            onClick={()=> handleChatStep(3)}>
+                            onClick={()=> {
+                                handleChatStep(3)
+                                setChatTitle('¡Lo lograste! Estamos listos para publicar tus resultados')
+                            }}>
                             <Image className='icon' src={sendIcon} alt="Send icon" />
                         </button>
                     </>}
