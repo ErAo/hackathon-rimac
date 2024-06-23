@@ -13,6 +13,7 @@ import DropDown from '@/components/block/DropDown/DropDown';
 export default function Quiz({data}) {
     const [step, setStep] = useState(0);
     const [chatStep, setChatStep] = useState(1);
+    const [results, setResults] = useState([])
     const [chatTitle, setChatTitle] = useState('Tus resultados se están cargando.')
     const [messages, setMessages] = useState([
         {
@@ -50,6 +51,10 @@ export default function Quiz({data}) {
         }
     ])
 
+    const redirect = (path) => {
+        window.location.href = path
+    }
+
     const handleStart = () => {
         setStep(1);
     }
@@ -62,7 +67,7 @@ export default function Quiz({data}) {
     }
 
     const handleFinishedQuiz = (data) => {
-        console.log(data)
+        setResults(data)
         setStep(4);
     }
 
@@ -76,6 +81,23 @@ export default function Quiz({data}) {
 
         setMessages(newMassages)
         setChatStep(step)
+    }
+
+    const handleResult = ()=> {
+        const positive = results.filter(result => result.category === 'positivo')
+        const negative = results.filter(result => result.category === 'negativo')
+
+        if(negative.length === positive.length) {
+            redirect('/Result-Neutro.png')
+        }else if(negative.length > positive.length) {
+            redirect('/Result-Negativo.png')
+        }else {
+            redirect('/Result-Positivo.png')
+        }
+        console.log({
+            positive: positive.length, 
+            negative: negative.length
+        })
     }
 
     return (
@@ -155,7 +177,7 @@ export default function Quiz({data}) {
                         <button 
                             className='button button--full button--primary' 
                             disabled={false} 
-                            onClick={()=> handleChatStep(3)}>
+                            onClick={()=> handleResult()}>
                             ¡Quiero unirme!
                         </button>
                     </>}

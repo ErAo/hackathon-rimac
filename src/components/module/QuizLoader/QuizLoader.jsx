@@ -10,7 +10,7 @@ export default function QuizLoader({
     useEffect(() => {
         setTimeout(() => {
            handle()
-        }, 5000)
+        }, 1500)
     }, [])
 
     return (
