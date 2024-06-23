@@ -12,6 +12,7 @@ import DropDown from '@/components/block/DropDown/DropDown';
 
 export default function Quiz({data}) {
     const [step, setStep] = useState(4);
+    const [chatStep, setChatStep] = useState(1);
     const [messages, setMessages] = useState([
         {
             identifier: 1,
@@ -64,6 +65,18 @@ export default function Quiz({data}) {
         setStep(4);
     }
 
+    const handleChatStep = (step) => {
+        const newMassages = [...messages].map(item => {
+            return {
+                ...item,
+                show: item.identifier === step
+            }
+        })
+
+        setMessages(newMassages)
+        setChatStep(step)
+    }
+
     return (
         <div className="quiz">
             {step === 0 && <QuizStart handle={handleStart}/>}
@@ -72,10 +85,12 @@ export default function Quiz({data}) {
             <ChatForm title="Estamos cargando tu experiencia" messages={[
                 {
                     identifier: 2,
+                    show: true,
                     content: "¡Nos alegra verte por aquí!"
                 },
                 {
                     identifier: 3,
+                    show: true,
                     content: "Para iniciar, indícanos tu nombre"
                 }
             ]}>
@@ -93,19 +108,50 @@ export default function Quiz({data}) {
 
             {step === 4 && 
                 <ChatForm title="Tus resultados se están cargando." messages={messages}>
-                    <DropDown 
-                        options={[
-                            {name: 'DNI', value: 'dni'},
-                            {name: 'RUC', value: 'ruc'},
-                        ]}
-                        name="documentType"
-                        updateValue={()=>{}}
-                        defaultValue="dni"
-                    />
-                    <Input type="text" inputMode='numeric' placeholder="N° de documento"/>
-                    <button className='button--icon button button--primary' disabled={false} onClick={handleLoadQuiz}>
-                        <Image className='icon' src={sendIcon} alt="Send icon" />
-                    </button>
+                    {chatStep === 1 && 
+                    <>
+                        <DropDown 
+                            options={[
+                                {name: 'DNI', value: 'dni'},
+                                {name: 'RUC', value: 'ruc'},
+                            ]}
+                            name="documentType"
+                            updateValue={()=>{}}
+                            defaultValue="dni"
+                        />
+                        <Input type="text" inputMode='numeric' placeholder="N° de documento"/>
+                        <button 
+                            className='button--icon button button--primary' 
+                            disabled={false} 
+                            onClick={()=> handleChatStep(2)}>
+                            <Image className='icon' src={sendIcon} alt="Send icon" />
+                        </button>
+                    </>}
+                    {chatStep === 2 && 
+                    <>
+                        <Input type="text" placeholder="Escribe tu correo electrónico"/>
+                        <button 
+                            className='button--icon button button--primary' 
+                            disabled={false} 
+                            onClick={()=> handleChatStep(3)}>
+                            <Image className='icon' src={sendIcon} alt="Send icon" />
+                        </button>
+                    </>}
+                    {chatStep === 3 && 
+                    <>
+                        <button 
+                            className='button button--full' 
+                            disabled={false} 
+                            onClick={()=> handleChatStep(3)}>
+                            Lo pensaré
+                        </button>
+                        <button 
+                            className='button button--full button--primary' 
+                            disabled={false} 
+                            onClick={()=> handleChatStep(3)}>
+                            ¡Quiero unirme!
+                        </button>
+                    </>}
                 </ChatForm>}
         </div>
     )

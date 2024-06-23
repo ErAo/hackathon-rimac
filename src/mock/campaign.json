@@ -110,6 +110,245 @@
                             }
                         }
                     ]
+                },
+                {
+                    "type": "Swipe",
+                    "title": "¿Te relaja ver una pelí o serie después del trabajo o estudio?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
+                    "options": [
+                        {
+                            "id": "2",
+                            "image": "/peli.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "relax_movie",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "relax_movie",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Swipe",
+                    "title": "¿Te gusta ejercitar al llegar a casa después de un día largo?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
+                    "options": [
+                        {
+                            "id": "2",
+                            "image": "/workout.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "after_work_exercise",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "after_work_exercise",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Poll",
+                    "title": "¿Qué te preocupa últimamente?",
+                    "subtitle": "Haz click en la opción con la que más te identificas",
+                    "options": [
+                        {
+                            "id": "1",
+                            "image": "/estres.png",
+                            "category": "negativo",
+                            "title": "El estrés y ansiedad",
+                            "value": {
+                                "key": "worries",
+                                "value": "estres"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "image": "/energia.png",
+                            "category": "negativo",
+                            "title": "La falta de energía",
+                            "value": {
+                                "key": "worries",
+                                "value": "inactividad"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "image": "/burger.png",
+                            "category": "positivo",
+                            "title": "No comer sano",
+                            "value": {
+                                "key": "worries",
+                                "value": "dieta"
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "image": "/nohacer.png",
+                            "category": "positivo",
+                            "title": "No hacer ejercicios",
+                            "value": {
+                                "key": "worries",
+                                "value": "workout"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Swipe",
+                    "title": "¿Disfrutas tus fines de semana en reuniones sociales?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
+                    "options": [
+                        {
+                            "id": "2",
+                            "image": "/fiesta.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "social_weekend",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "social_weekend",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Poll",
+                    "title": "¿Que es lo que motiva de mantenerte saludable?",
+                    "subtitle": "Haz click en la opción con la que más te identificas",
+                    "options": [
+                        {
+                            "id": "1",
+                            "image": "/sentir.png",
+                            "category": "negativo",
+                            "title": "Sentirme bien",
+                            "value": {
+                                "key": "motivation_health",
+                                "value": "emocional"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "image": "/fisico.png",
+                            "category": "positivo",
+                            "title": "Mejorar fisicamente",
+                            "value": {
+                                "key": "motivation_health",
+                                "value": "rendimiento"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "image": "/prevenir.png",
+                            "category": "positivo",
+                            "title": "Prevenir enfermedades",
+                            "value": {
+                                "key": "motivation_health",
+                                "value": "prevencion"
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "image": "/reducir.png",
+                            "category": "positivo",
+                            "title": "Reducir el estrés",
+                            "value": {
+                                "key": "motivation_health",
+                                "value": "calma"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "Swipe",
+                    "title": "¿Te gusta leer libros para relajarte en tu tiempo libre?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
+                    "options": [
+                        {
+                            "id": "2",
+                            "image": "/reading.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "relax_reading",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "relax_reading",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Swipe",
+                    "title": "¿Disfrutar tus fines de semana al aire libre?",
+                    "subtitle": "Arrastra la imagen a la izquierda o derecha según tu preferencia.",
+                    "options": [
+                        {
+                            "id": "2",
+                            "image": "/libre.png",
+                            "value": [
+                                {
+                                    "choice": "left",
+                                    "category": "negativo",
+                                    "value": {
+                                        "key": "outdoor_weekend",
+                                        "value": "No"
+                                    }
+                                },
+                                {
+                                    "choice": "right",
+                                    "category": "positivo",
+                                    "value": {
+                                        "key": "outdoor_weekend",
+                                        "value": "Si"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
