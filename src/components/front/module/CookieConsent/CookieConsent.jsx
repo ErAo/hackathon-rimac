@@ -13,7 +13,13 @@ export default function CookieConsent() {
         setShow(false)
     }
 
-    const cookiesAccepted = () => window?.localStorage?.getItem('cookie-consent') === 'accepted'
+    const cookiesAccepted = () => {
+        try {
+            return window?.localStorage?.getItem('cookie-consent') === 'accepted'
+        }catch(e){
+            return true
+        }
+    }
 
 
     return (

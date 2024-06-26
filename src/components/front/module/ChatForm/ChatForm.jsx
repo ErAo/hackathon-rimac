@@ -20,7 +20,7 @@ export default function ChatForm({
         })
 
         setShowMessages(newMessages)
-
+        
         if(newMessages.length === showMessages.length){
             onLastMessage()
         }
@@ -33,10 +33,8 @@ export default function ChatForm({
     }, [messages])
 
     const onShow = () => {
-        if (messageIndex < messages.length - 1) {
-            setMessageIndex(messageIndex + 1)
-            showMessagesHandler(messageIndex + 1)
-        }
+        setMessageIndex(messageIndex + 1)
+        showMessagesHandler(messageIndex + 1)
     }
 
     return (
@@ -52,7 +50,7 @@ export default function ChatForm({
                     <BottomSheet>
                         <div className="chat_form__chat__messages">
                             {showMessages.map((message, index) => (
-                                <Bubble key={index} delay={message.delay} onShow={onShow} show={message.show}>
+                                <Bubble key={`${index}-${message.identifier}`} delay={message.delay} onShow={onShow} show={message.show}>
                                     {message.content}
                                 </Bubble>
                             ))}
