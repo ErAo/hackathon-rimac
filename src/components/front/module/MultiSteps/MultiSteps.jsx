@@ -1,7 +1,7 @@
-import './MuliSteps.scss'
+import './MultiSteps.scss'
 import { useState, useEffect } from 'react'
 
-export default function MuliSteps({ step, children, onStepChange = () => {} }) {
+export default function MultiSteps({ step, children, onStepChange = () => {} }) {
     const [currentStep, setCurrentStep] = useState(step - 1)
 
     useEffect(() => {

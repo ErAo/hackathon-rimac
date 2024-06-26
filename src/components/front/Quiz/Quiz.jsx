@@ -9,7 +9,8 @@ import Input from '@/components/front/block/Input/Input';
 import Image from 'next/image';
 import sendIcon from '@/assets/img/send.svg';
 import DropDown from '@/components/front/block/DropDown/DropDown';
-import MuliSteps from '@/components/front/module/MuliSteps/MuliSteps';
+import MultiSteps from '@/components/front/module/MultiSteps/MultiSteps';
+import Fade from '@/components/front/animation/Fade/Fade';
 
 export default function Quiz({data}) {
     const [step, setStep] = useState(1);
@@ -18,6 +19,7 @@ export default function Quiz({data}) {
     const [messages, setMessages] = useState(data.messages)
     const [chatTitle, setChatTitle] = useState(messages[0].title)
     const [userData, setUserData] = useState({})
+    const [showChatInput, setShowChatInput] = useState(false)
 
     const redirect = (path) => {
         window.location.href = path
@@ -69,29 +71,36 @@ export default function Quiz({data}) {
     }
 
     const onUpdate = (name, value) => {
-        console.log(value)
         setUserData({
             ...userData,
             [name]: value
         })
     }
 
+    const onLastMessage = () => {
+        setShowChatInput(true)
+    }
+
+    const onChatStepChange = () => {
+        setShowChatInput(false)
+    }
+
     return (
         <div className="quiz">
-            <MuliSteps step={step}>
+            <MultiSteps step={step}>
 
                 <QuizStart handle={handleStart}/>
 
-                <ChatForm title={chatTitle} messages={messages}>
-                    <MuliSteps step={chatStep}>
-                        <>
+                <ChatForm title={chatTitle} messages={messages} onLastMessage={onLastMessage}>
+                    <MultiSteps step={chatStep} onStepChange={onChatStepChange}>
+                        <Fade show={showChatInput}>
                             <Input onUpdate={onUpdate} type="text" name="name" placeholder="Escribe tu nombre aquí"/>
                             <button className='button--icon button button--primary' disabled={!userData.name} onClick={handleLoadQuiz}>
                                 <Image className='icon' src={sendIcon} alt="Send icon" />
                             </button>
-                        </>
+                        </Fade>
 
-                        <>
+                        <Fade show={showChatInput}>
                             <DropDown 
                                 options={[
                                     {name: 'DNI', value: 'dni'},
@@ -115,9 +124,9 @@ export default function Quiz({data}) {
                                 }}>
                                 <Image className='icon' src={sendIcon} alt="Send icon" />
                             </button>
-                        </>
+                        </Fade>
 
-                        <>
+                        <Fade show={showChatInput}>
                             <Input 
                                 onUpdate={onUpdate}
                                 type="text" 
@@ -131,9 +140,9 @@ export default function Quiz({data}) {
                                 }}>
                                 <Image className='icon' src={sendIcon} alt="Send icon" />
                             </button>
-                        </>
+                        </Fade>
 
-                        <>
+                        <Fade show={showChatInput}>
                             <button 
                                 className='button button--full' 
                                 onClick={()=> handleResult()}>
@@ -144,9 +153,9 @@ export default function Quiz({data}) {
                                 onClick={()=> handleChatStep(5)}>
                                 ¡Quiero unirme!
                             </button>
-                        </>
+                        </Fade>
 
-                        <>
+                        <Fade show={showChatInput}>
                             <Input 
                                 onUpdate={onUpdate}
                                 type="text" 
@@ -160,15 +169,15 @@ export default function Quiz({data}) {
                                 }}>
                                 <Image className='icon' src={sendIcon} alt="Send icon" />
                             </button>
-                        </>
-                    </MuliSteps>
+                        </Fade>
+                    </MultiSteps>
                 </ChatForm>
 
                 <QuizLoader name={userData.name} handle={handleQuizLoader}/>
 
                 <QuizGame data={data} handle={handleFinishedQuiz}/>
 
-            </MuliSteps>
+            </MultiSteps>
         </div>
     )
 }

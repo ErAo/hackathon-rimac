@@ -1,0 +1,10 @@
+.fade {
+    opacity: 0;
+    transition: 0.4s;
+    pointer-events: none;
+
+    &--active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

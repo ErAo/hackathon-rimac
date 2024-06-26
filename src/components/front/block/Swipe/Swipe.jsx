@@ -1,6 +1,5 @@
 import './Swipe.scss'
-import Image from 'next/image'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import CardImage from '../CardImage/CardImage';
 
 export default function Swipe({
@@ -17,7 +16,6 @@ export default function Swipe({
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
     const [isSwiping, setIsSwiping] = useState(false);
-    const swipeRef = useRef(null);
 
     const handleTouchStart = (e) => {
         setStartX(e.clientX || e.touches[0].clientX);
@@ -25,7 +23,6 @@ export default function Swipe({
 
     const handleTouchMove = (e) => {
         if(!startX) return;
-        console.log('here')
         setEndX(e.clientX || e.touches[0].clientX);
         setIsSwiping(true);
     }

@@ -44,9 +44,12 @@
             padding: 20px 20px 0;
             margin-top: auto;
             z-index: 1;
-            display: flex;
-            gap: 12px;
-            align-items: center;
+
+            .fade {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
         }
 
         .bottom_sheet::before {

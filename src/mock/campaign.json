@@ -8,70 +8,70 @@
             {
                 "identifier": 1,
                 "show": true,
-                "delay": 0,
+                "delay": 500,
                 "title": "Estamos cargando tu experiencia",
                 "content": "¡Nos alegra verte por aquí!"
             },
             {
                 "identifier": 1,
                 "show": true,
-                "delay": 2000,
+                "delay": 500,
                 "title": "",
                 "content": "Para iniciar, indícanos tu nombre"
             },
             {
                 "identifier": 2,
                 "show": false,
-                "delay": 0,
+                "delay": 500,
                 "title": "Tus resultados se están cargando.",
                 "content": "Para continuar..."
             },
             {
                 "identifier": 2,
                 "show": false,
-                "delay": 1000,
+                "delay": 500,
                 "title": "",
                 "content": "Indícanos tu número de documento"
             },
             {
                 "identifier": 3,
                 "show": false,
-                "delay": 0,
+                "delay": 500,
                 "title": "Falta poco, estamos preparando tu resultado.",
                 "content": "¡Perfecto!"
             },
             {
                 "identifier": 3,
                 "show": false,
-                "delay": 1000,
+                "delay": 500,
                 "title": "",
                 "content": "Déjanos tu correo para recibir más tips de bienestar."
             },
             {
                 "identifier": 4,
                 "show": false,
-                "delay": 0,
+                "delay": 500,
                 "title": "¡Lo lograste! Estamos listos para publicar tus resultados",
                 "content": "¡Listo!"
             },
             {
                 "identifier": 4,
                 "show": false,
-                "delay": 1000,
+                "delay": 500,
                 "title": "",
                 "content": "¿Quieres unirte a nuestras comunidades de bienestar en whatsapp?"
             },
             {
                 "identifier": 5,
                 "show": false,
-                "delay": 0,
+                "delay": 500,
                 "title": "",
                 "content": "¡Nos alegra!"
             },
             {
                 "identifier": 5,
                 "show": false,
-                "delay": 1000,
+                "delay": 500,
                 "title": "",
                 "content": "Ingresa tu número ¡Y sumate a la comunidad de bienestar más grande del Perú!"
             }

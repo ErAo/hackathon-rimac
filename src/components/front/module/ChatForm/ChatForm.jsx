@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './ChatForm.scss'
 import Image from 'next/image'
 import Bubble from '@/components/front/block/Bubble/Bubble'
@@ -7,9 +8,36 @@ import chatFormImage from '@/assets/img/chat-form.svg'
 export default function ChatForm({
     messages = [],
     children,
-    title
+    title,
+    onLastMessage = () => { }
 }) {
-    console.log(messages)
+    const [showMessages, setShowMessages] = useState([])
+    const [messageIndex, setMessageIndex] = useState(0)
+
+    const showMessagesHandler = (newIndex) => {
+        const newMessages = [...messages].filter((message, index) => {
+            return message.show && index <= newIndex
+        })
+
+        setShowMessages(newMessages)
+
+        if(newMessages.length === showMessages.length){
+            onLastMessage()
+        }
+    }
+
+    useEffect(() => {
+        const defaultIndex = messages.findIndex(message => message.show)
+        showMessagesHandler(defaultIndex)
+        setMessageIndex(defaultIndex)
+    }, [messages])
+
+    const onShow = () => {
+        if (messageIndex < messages.length - 1) {
+            setMessageIndex(messageIndex + 1)
+            showMessagesHandler(messageIndex + 1)
+        }
+    }
 
     return (
         <div className="chat_form">
@@ -23,8 +51,8 @@ export default function ChatForm({
                 <div className="chat_form__chat">
                     <BottomSheet>
                         <div className="chat_form__chat__messages">
-                            {messages.map((message, index) => (
-                                <Bubble key={index} delay={message.delay} show={message.show}>
+                            {showMessages.map((message, index) => (
+                                <Bubble key={index} delay={message.delay} onShow={onShow} show={message.show}>
                                     {message.content}
                                 </Bubble>
                             ))}

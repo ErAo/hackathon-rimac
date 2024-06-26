@@ -17,7 +17,7 @@ export default function Bubble({
         return () => {
             clearTimeout(timer)
         }
-    }, [show])
+    }, [])
 
     return (
         <div className={`bubble${show ? ' bubble--active' : ''}`}>
