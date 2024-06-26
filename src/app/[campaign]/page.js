@@ -1,7 +1,7 @@
 import './campaign.scss';
 import campaigns from "@/mock/campaign.json";
-import CookieConsent from '@/components/module/CookieConsent/CookieConsent';
-import Quiz from '@/components/Quiz/Quiz';
+import CookieConsent from '@/components/front/module/CookieConsent/CookieConsent';
+import Quiz from '@/components/front/Quiz/Quiz';
 import { notFound } from 'next/navigation'
 
 export default function Page({params}) {

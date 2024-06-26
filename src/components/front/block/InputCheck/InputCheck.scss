@@ -1,0 +1,43 @@
+.input_check {
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    flex: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+
+    &__input {
+        display: none;
+    }
+
+    &__input:checked + .input_check__fake-checkbox {
+        background: #fff;
+        
+        &::after {
+            display: block;
+        }
+    }
+
+    &__fake-checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        margin-top: 1px;
+        border: 1px solid #D0D5DD;
+        border-radius: 4px;
+        background: #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+
+        &::after {
+            display: none;
+            content: '';
+            height: 100%;
+            width: 100%;
+            background: url('~/src/assets/img/check.svg') center center / contain no-repeat;
+        }
+    }
+}
